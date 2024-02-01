@@ -1,4 +1,4 @@
-# Read Me 
+# Read me starts here 
 
 # High-Level Design (HLD)
 
@@ -320,4 +320,34 @@ We need to normalize the following:
 
 ## 3. Third Normal Form (3NF)
 ### Invoice:
-- InvoiceID(P
+- InvoiceID(PK)
+- InvoiceDate
+- WorkerID(FK)
+- VehicleID(FK)
+- UserID(FK)
+- UserCardNumber(FK)
+
+### Vehicles:
+- VehicleID(PK)
+- VehicleName
+- VehicleCapacity
+- VehicleColor
+- VehiclePrice
+- VehicleCondition
+- VehicleSize
+- VehicleYearModel
+
+### Users:
+- UserID(PK)
+- UserName
+- UserPassWord
+- UserDOB
+- UserPhoneNumber
+- UserAddress
+- UserEriCode 
+
+### Card:
+- UserCardNumber(PK)
+- UserCCVNumber
+- UserCardExpirationDate
+- UserID(FK)
