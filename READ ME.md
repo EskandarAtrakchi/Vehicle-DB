@@ -1,5 +1,13 @@
 # Read me starts here 
 
+# Notes from the documentation for the following functions
+## 1. The code is not following the naming convections
+## 2. There might be mistakes in the code from te side of the database that thedatabase is not working for big amount of data
+## 3. SQL Server that been installed for this is not suitable for big trafic 
+
+# You are free to use the code as you want, but please pay atention before using it.
+
+# Documentation starts here: 
 # High-Level Design (HLD)
 
 ## Overview
@@ -351,3 +359,5 @@ We need to normalize the following:
 - UserCCVNumber
 - UserCardExpirationDate
 - UserID(FK)
+
+
