@@ -361,3 +361,110 @@ We need to normalize the following:
 - UserID(FK)
 
 
+# Table 1: Vehicle Table
+
+| Field           | Field Type | Field Size |
+|-----------------|------------|------------|
+| VehicleID(PK)   | Char       | 255        |
+| VehicleName     | Varchar    | 255        |
+| VehicleCapacity | int        |            |
+| VehicleColor    | Varchar    | 255        |
+| VehiclePrice    | float      |            |
+| VehicleCondition| Varchar    | 255        |
+| VehicleSize     | Varchar    | 255        |
+| VehicleYearModel| int        |            |
+
+# Table 2: User Table
+
+| Field          | Field Type | Field Size |
+|----------------|------------|------------|
+| UserID(PK)     | Char       | 255        |
+| UserPassWord   | Varchar    | 255        |
+| UserDOB        | Date       |            |
+| UserPhoneNumber| int        |            |
+| UserAddress    | Varchar    | 255        |
+| UserEriCode    | Varchar    | 255        |
+| VehicleID(FK)  | Char       | 255        |
+
+# Table 3: Invoice Table
+
+| Field               | Field Type | Field Size |
+|---------------------|------------|------------|
+| InvoiceID(PK)       | Char       | 255        |
+| UserID(FK)          | Char       | 255        |
+| VehicleID(FK)       | Char       | 255        |
+| UserCardNumber(FK)  | Char       | 255        |
+| WorkerID            | int        |            |
+| WorkerName          | Varchar    | 255        |
+| InvoiceDate         | Date       |            |
+
+# Table 4: UserCardNumber Table
+
+| Field               | Field Type | Field Size |
+|---------------------|------------|------------|
+| UserCardNumber(PK)  | Char       | 255        |
+| UserCCVNumber       | int        |            |
+| UserCardExpDate     | Date       |            |
+| UserID(FK)          | Char       | 255        |
+
+# Data Dictionary
+
+## Invoice Table Data
+
+| WorkerID | WorkerName | InvoiceID(PK) | InvoiceDate | VehicleID(FK) | UserID(FK) | UserCardNumber(FK) |
+|----------|------------|---------------|-------------|---------------|------------|---------------------|
+| 1        | Alex       | 101           | 2021-01-01  | 201           | 301        | 987654321           |
+| 2        | Josh       | 102           | 2021-02-02  | 202           | 302        | 123456789           |
+| 3        | Yonas      | 103           | 2021-03-03  | 203           | 303        | 728364238           |
+| 4        | Ann        | 104           | 2021-04-04  | 204           | 304        | 141242455           |
+| 5        | Eskandar   | 105           | 2021-05-05  | 205           | 305        | 242465375           |
+| 6        | Garvin     | 106           | 2021-06-06  | 206           | 306        | 357342151           |
+| 7        | Pat        | 107           | 2021-07-07  | 207           | 307        | 845876554           |
+| 8        | Joshua     | 108           | 2021-08-08  | 208           | 308        | 124162790           |
+| 9        | Ali        | 109           | 2021-09-09  | 209           | 309        | 987087655           |
+| 10       | Feby       | 110           | 2021-10-10  | 210           | 310        | 235375978           |
+
+## UserCardNumber Table Data
+
+| UserCardNumber(PK) | UserCCVNumber | UserCardExpirationDate | UserID(FK) |
+|--------------------|---------------|------------------------|------------|
+| 987654321          | 111           | 2025-01-01             | 301        |
+| 123456789          | 222           | 2025-02-02             | 302        |
+| 728364238          | 333           | 2025-03-03             | 303        |
+| 141242455          | 444           | 2025-04-04             | 304        |
+| 242465375          | 555           | 2025-05-05             | 305        |
+| 357342151          | 666           | 2025-06-06             | 306        |
+| 845876554          | 777           | 2025-07-07             | 307        |
+| 124162790          | 888           | 2025-08-08             | 308        |
+| 987087655          | 999           | 2025-09-09             | 309        |
+| 235375978          | 100           | 2025-10-10             | 310        |
+
+## Vehicle Table Data
+
+| VehicleID(PK) | VehicleName | VehicleColor | VehiclePrice | VehicleCondition | VehicleSize | VehicleYearModel | VehicleCapacity |
+|---------------|--------------|--------------|--------------|-------------------|-------------|-------------------|------------------|
+| 201           | Nissan       | #FFFFFF      | 500000       | New               | Big         | 2010              | 1000             |
+| 202           | Nissan       | #FFFFFF      | 500100       | New               | Big         | 2011              | 1001             |
+| 203           | Hondai       | #FFFFFF      | 500200       | New               | Big         | 2012              | 1002             |
+| 204           | Hondai       | #FFFFFF      | 500300       | New               | Big         | 2013              | 1003             |
+| 205           | Nissan       | #FFFFFF      | 500400       | New               | Big         | 2014              | 1004             |
+| 206           | Mercedes     | #FFFFFF      | 500500       | New               | Big         | 2015              | 1005             |
+| 207           | Mercedes     | #FFFFFF      | 500600       | New               | Big         | 2016              | 1006             |
+| 208           | Hondai       | #FFFFFF      | 500700       | New               | Medium      | 2017              | 1007             |
+| 209           | MAN          | #FFFFFF      | 500800       | New               | Small       | 2018              | 1008             |
+| 210           | Hondai       | #FF93FA      | 500900       | New               | Big         | 2019              | 1009             |
+
+## User Table Data
+
+| UserID(PK) | UserPassWord | UserDOB    | UserPhoneNumber | UserAddress  | UserEriCode | VehicleID(FK) | UserName |
+|------------|--------------|------------|------------------|--------------|-------------|---------------|----------|
+| 301        | 123456789    | 1980-01-01 | 07123456         | Queen’s Road | 123 ABC     | 201           | Tran     |
+| 302        | 123456780    | 1981-02-02 | 07123457         | King’s Road  | 234 BCD     | 202           | Linda    |
+| 303        | 123456790    | 1982-03-03 | 07123467         | Prince Road  | 345 CDE     | 203           | Alexa    |
+| 304        | 123456890    | 1983-04-04 | 07123567         | Cool Road    | 456 DEF     | 204           | May      |
+| 305        | 123456890    | 1984-05-05 | 07124567         | Hill Road    | 567 EFG     | 205           | Lara     |
+| 306        | 123457890    | 1985-06-06 | 07124567         | Haven Road   | 678 FGH     | 206           | Yara     |
+| 307        | 123467890    | 1986-07-07 | 07134567         | College Road | 789 GHI     | 207           | Sabrina  |
+| 308        | 123567890    | 1987-08-08 | 07234567         | Uni Road     | 890 HIJ     | 208           | Kristina |
+| 309        | 124567890    | 1988-09-09 | 01234567         | Camden Road  | 901 IJK     | 209           | Maria    |
+| 310        | 134567890    | 1989-10-10 | 71234567         | School Road  | 012 JKL     | 210           | Mia      |
