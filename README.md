@@ -1,4 +1,4 @@
-# Read me starts here 
+# Read me
 
 # Notes from the documentation for the following functions
 ## 1. The code is not following the naming convections
