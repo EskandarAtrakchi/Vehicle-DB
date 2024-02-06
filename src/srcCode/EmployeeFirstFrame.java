@@ -9,13 +9,9 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 /**
  *
- * @author escan
+ * @author EskandarAtrakchi
  */
 public class EmployeeFirstFrame extends javax.swing.JFrame {
 
