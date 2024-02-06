@@ -1,9 +1,4 @@
 package sql;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -15,7 +10,7 @@ import javax.swing.Timer;
 
 /**
  *
- * @author escan
+ * @author EskandarAtrakchi
  */
 public class CustomerFirstFrame extends javax.swing.JFrame {
 
