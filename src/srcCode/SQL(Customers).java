@@ -19,7 +19,7 @@ import static sql.CustomerFirstFrame.UPassWordFFF;
 
 /**
  *
- * @author Eskandar
+ * @author EskandarAtrakchi
  */
 public class SQL {
     
