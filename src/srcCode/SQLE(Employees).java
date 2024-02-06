@@ -18,7 +18,7 @@ import static sql.SQL.url;
 
 /**
  *
- * @author escan
+ * @author EskandarAtrakchi
  */
 public class SQLE {
 
