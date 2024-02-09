@@ -469,29 +469,28 @@ We need to normalize the following:
 | 309        | 124567890    | 1988-09-09 | 01234567         | Camden Road  | 901 IJK     | 209           | Maria    |
 | 310        | 134567890    | 1989-10-10 | 71234567         | School Road  | 012 JKL     | 210           | Mia      |
 
-## Error handling and testing the project 
-
 # Why Software Fails
 
 ## Introduction
-Think of software failures that have impacted you. Last year’s project involved building a Vehicle Shop database using Java and SQL with a GUI (Graphic User Interface). I faced a software failure that highlighted the crucial role of software quality and testing.
+Think of software failures that have impacted you. Last year’s project doing Vehicle Shop database using Java and SQL building GUI (Graphic User Interface), I faced a software failure that can be highlighted the role of software quality and testing. The issue happened because of oversight in handling user input for one of the fields, and that field was Bank Card Number of the customers, this field was very important because it is related to the invoice and to the purchased vehicles by the customers, if this field got error the whole App is facing troubles in all the GUI’s tabs.
 
-The issue stemmed from an oversight in handling user input for the Bank Card Number field. This field was pivotal, linking to invoices and the purchased vehicles. Any error in this field affected the entire application across all tabs.
+### What was it? What Failed?
+Where I have failed to set a limit for the following:
+1. The limit for how many MAX_VALUE of integers needs to be accepted by the user. MAX_VALUE is representing the maximum positive number in decimal format to be accepted that can be represented in 32 bits and the number is 2147483647. This means that no number of type Integer that is greater than 2147483647 can exist in Java.
+2. The second failure is that the user input was not limited to only numbers, rather was accepting any input, symbols, characters, decimal numbers, and this can make error especially the variable that been used is assigned as type of integer.
 
-### What Failed
-I failed to set limits for:
-1. The maximum number of integers (MAX_VALUE) accepted, restricted to 32-bit representation, i.e., 2147483647.
-2. Limiting user input to only numeric values, as the field was of type integer, causing issues with symbols, characters, and decimal numbers.
+### Could testing have fixed it?
+Test would have absolutely made change to the positive side, especially on user inputs testing would have highlighted the potential error that can be occurred and for restrictions on non-integers inputs. Various testing methodologies, such as unit testing, integration testing, and acceptance testing, could have been used to ensure that the software behaved as intended under different scenarios. Additionally, implementing error handling messages blocks is the proper way also for preventing the Vehicle Database App from crashing, this approach is more user friendly and more software stability!
 
-## Could Testing Have Fixed It?
-Testing would have significantly improved the situation, highlighting potential errors in user inputs and restrictions on non-integer inputs. Various testing methodologies (unit testing, integration testing, and acceptance testing) could have ensured the software behaved as intended under different scenarios. Implementing error handling messages would have prevented crashes, enhancing user-friendliness and software stability.
+Finally, glad to say that this error was address in resent GitHub commits and this was handled by providing better user experience and better software stability by providing error messages blocks to prevent potential App crash.
 
-### Resolution
-The error was addressed in recent GitHub commits, improving user experience and software stability. Two methods were employed:
-1. Allowing the field to consume only digits; otherwise, a message on the GUI notifies the user.
-2. Allowing the field to take only 16 digits; if 16 digits or more are entered, a message block pops up to notify the user.
+1. If more than 16 numbers are entered by the user, then a block message will pop up to inform the user.
+2. If the user enters non-integer to the field a (only number) text will be displayed on the GUI to inform the user that only numbers is allowed in this field.
 
-For more details, check the [Vehicle Shop Database on GitHub](https://github.com/EskandarAtrakchi/Vehicle-Shop-DB). The [testing plan](https://github.com/EskandarAtrakchi/Vehicle-Shop-DB/raw/master/DB-Test%20plan.xlsx) conducted ensures software reliability.
+Please check Vehicles database on GitHub [Vehicle-Shop-DB](https://github.com/EskandarAtrakchi/Vehicle-Shop-DB) It shows the Vehicle Shop Database repo and the approach that been followed to address those two issues, and here is the testing plan that was conducted to make sure that the software is as much reliable as possible [Testing Plan](https://github.com/EskandarAtrakchi/Vehicle-Shop-DB/raw/master/DB-Test%20plan.xlsx)
 
-## Conclusion
-The error was mitigated by incorporating user-friendly error messages and implementing stricter input controls, making the application more robust and reliable.
+The error was mitigated in those two methods.
+
+- Which is allowing the field to consume only digits otherwise a message on GUI will pop up and notify the user.
+  
+- Which allowing the field to take only 16 digits if 16 digits or more a message block will pop up to notify the user that only 16 digits is allowed.
