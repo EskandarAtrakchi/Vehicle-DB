@@ -468,3 +468,51 @@ We need to normalize the following:
 | 308        | 123567890    | 1987-08-08 | 07234567         | Uni Road     | 890 HIJ     | 208           | Kristina |
 | 309        | 124567890    | 1988-09-09 | 01234567         | Camden Road  | 901 IJK     | 209           | Maria    |
 | 310        | 134567890    | 1989-10-10 | 71234567         | School Road  | 012 JKL     | 210           | Mia      |
+
+## Error handling and testing the project 
+
++-------------------------+
+|           Start         |
++-------------------------+
+             |
+             V
++-------------------------+
+|   User Enters Input     |
++-------------------------+
+             |
+             V
++-------------------------+
+|   Is Input Numeric?     |
++-----------|-------------+
+            |
+            V
++-------------------------+
+|   No                    |
+|   Display Error Message|
+|   End - Program Crashes|
++-------------------------+
+            |
+            V
++-------------------------+
+|   Yes                   |
+|   Is Input Within Range?|
++-----------|-------------+
+            |
+            V
++-------------------------+
+|   No                    |
+|   Display Error Message|
+|   End - Program Crashes|
++-------------------------+
+            |
+            V
++-------------------------+
+|   Yes                   |
+|   Continue Processing   |
++-------------------------+
+            |
+            V
++-------------------------+
+|   End - Successful      |
+|   Execution             |
++-------------------------+
