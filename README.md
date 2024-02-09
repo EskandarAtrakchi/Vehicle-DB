@@ -471,62 +471,27 @@ We need to normalize the following:
 
 ## Error handling and testing the project 
 
-+-------------------------+
-|           Start         |
-+-------------------------+
+# Why Software Fails
 
-             |
-             V
+## Introduction
+Think of software failures that have impacted you. Last year’s project involved building a Vehicle Shop database using Java and SQL with a GUI (Graphic User Interface). I faced a software failure that highlighted the crucial role of software quality and testing.
 
-+-------------------------+
-|   User Enters Input     |
-+-------------------------+
+The issue stemmed from an oversight in handling user input for the Bank Card Number field. This field was pivotal, linking to invoices and the purchased vehicles. Any error in this field affected the entire application across all tabs.
 
-             |
-             V
+### What Failed
+I failed to set limits for:
+1. The maximum number of integers (MAX_VALUE) accepted, restricted to 32-bit representation, i.e., 2147483647.
+2. Limiting user input to only numeric values, as the field was of type integer, causing issues with symbols, characters, and decimal numbers.
 
-+-------------------------+
-|   Is Input Numeric?     |
-+-----------|-------------+
+## Could Testing Have Fixed It?
+Testing would have significantly improved the situation, highlighting potential errors in user inputs and restrictions on non-integer inputs. Various testing methodologies (unit testing, integration testing, and acceptance testing) could have ensured the software behaved as intended under different scenarios. Implementing error handling messages would have prevented crashes, enhancing user-friendliness and software stability.
 
-            |
-            V
+### Resolution
+The error was addressed in recent GitHub commits, improving user experience and software stability. Two methods were employed:
+1. Allowing the field to consume only digits; otherwise, a message on the GUI notifies the user.
+2. Allowing the field to take only 16 digits; if 16 digits or more are entered, a message block pops up to notify the user.
 
-+-------------------------+
-|   No                    |
-|   Display Error Message |
-|   End - Program Crashes |
-+-------------------------+
+For more details, check the [Vehicle Shop Database on GitHub](https://github.com/EskandarAtrakchi/Vehicle-Shop-DB). The [testing plan](https://github.com/EskandarAtrakchi/Vehicle-Shop-DB/raw/master/DB-Test%20plan.xlsx) conducted ensures software reliability.
 
-            |
-            V
-
-+-------------------------+
-|   Yes                   |
-|   Is Input Within Range?|
-+-----------|-------------+
-
-            |
-            V
-
-+-------------------------+
-|   No                    |
-|   Display Error Message |
-|   End - Program Crashes |
-+-------------------------+
-
-            |
-            V
-
-+-------------------------+
-|   Yes                   |
-|   Continue Processing   |
-+-------------------------+
-
-            |
-            V
-            
-+-------------------------+
-|   End - Successful      |
-|   Execution             |
-+-------------------------+
+## Conclusion
+The error was mitigated by incorporating user-friendly error messages and implementing stricter input controls, making the application more robust and reliable.
