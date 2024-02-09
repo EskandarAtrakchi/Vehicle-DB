@@ -474,24 +474,59 @@ We need to normalize the following:
 +-------------------------+
 |           Start         |
 +-------------------------+
-|  User Enters Input      |
-|-------------------------|
-| Is Input Numeric?       |
-|-------------------------|
-|  No                     |
-|  Display Error Message  |
-|  End - Program Crashes  |
+
+             |
+             V
+
 +-------------------------+
-|  Yes                    |
-| Is Input Within Range?  |
-|-------------------------|
-|  No                     |
-|  Display Error Message  |
-|  End - Program Crashes  |
+|   User Enters Input     |
 +-------------------------+
-|  Yes                    |
-|  Continue Processing    |
+
+             |
+             V
+
 +-------------------------+
-| End - Successful        |
-| Execution               |
+|   Is Input Numeric?     |
++-----------|-------------+
+
+            |
+            V
+
++-------------------------+
+|   No                    |
+|   Display Error Message |
+|   End - Program Crashes |
++-------------------------+
+
+            |
+            V
+
++-------------------------+
+|   Yes                   |
+|   Is Input Within Range?|
++-----------|-------------+
+
+            |
+            V
+
++-------------------------+
+|   No                    |
+|   Display Error Message |
+|   End - Program Crashes |
++-------------------------+
+
+            |
+            V
+
++-------------------------+
+|   Yes                   |
+|   Continue Processing   |
++-------------------------+
+
+            |
+            V
+            
++-------------------------+
+|   End - Successful      |
+|   Execution             |
 +-------------------------+
