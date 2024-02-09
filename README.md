@@ -491,6 +491,24 @@ Please check Vehicles database on GitHub [Vehicle-Shop-DB](https://github.com/Es
 
 The error was mitigated in those two methods.
 
+```java 
+private void cardnumberInvoiceFKeyTyped(java.awt.event.KeyEvent evt) {                                            
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+
+            jLabel35.setVisible(true);
+            evt.consume();
+
+        } else {
+
+            jLabel35.setVisible(false);
+
+        }
+
+    }      
+```
 - Which is allowing the field to consume only digits otherwise a message on GUI will pop up and notify the user.
   
 - Which allowing the field to take only 16 digits if 16 digits or more a message block will pop up to notify the user that only 16 digits is allowed.
